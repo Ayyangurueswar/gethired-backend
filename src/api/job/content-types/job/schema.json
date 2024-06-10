@@ -1,0 +1,59 @@
+{
+  "kind": "collectionType",
+  "collectionName": "jobs",
+  "info": {
+    "singularName": "job",
+    "pluralName": "jobs",
+    "displayName": "Job",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "skills": {
+      "type": "string"
+    },
+    "stipend": {
+      "type": "decimal"
+    },
+    "applyBy": {
+      "type": "date"
+    },
+    "postedBy": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "jobsPosted"
+    },
+    "domain": {
+      "type": "string"
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "applications": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::application.application",
+      "mappedBy": "job"
+    },
+    "mode": {
+      "type": "enumeration",
+      "enum": [
+        "Remote",
+        "In-office"
+      ]
+    },
+    "location": {
+      "type": "string"
+    },
+    "company": {
+      "type": "string"
+    }
+  }
+}
