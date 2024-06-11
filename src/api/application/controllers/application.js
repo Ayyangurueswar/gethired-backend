@@ -44,5 +44,25 @@ module.exports = createCoreController('api::application.application', ({strapi})
             populate: "*"
         });
         return updatedRes;
+    },
+    async getApplications(ctx){
+        const user = ctx.state.user;
+        if(!user || user.type === 'candidate'){
+            return ctx.badRequest([{messages: [{id: 'No authorization header was found'}]}])
+        }
+        const {jobId} = JSON.parse(ctx.request.body);
+        const data = await strapi.db.query('api::application.application').findMany({
+            where: {
+                job: {
+                    id: jobId,
+                }
+            },
+            populate: true,
+        });
+        if(!data){
+            return ctx.notFound();
+        }
+        const sanitizedData = await this.sanitizeOutput(data, ctx);
+        return sanitizedData;
     }
 }));

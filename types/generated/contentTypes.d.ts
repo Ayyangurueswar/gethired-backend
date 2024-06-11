@@ -434,7 +434,6 @@ export interface ApiJobJob extends Schema.CollectionType {
       'plugin::users-permissions.user'
     >;
     domain: Attribute.String;
-    description: Attribute.Blocks;
     applications: Attribute.Relation<
       'api::job.job',
       'oneToMany',
@@ -443,6 +442,7 @@ export interface ApiJobJob extends Schema.CollectionType {
     mode: Attribute.Enumeration<['Remote', 'In-office']>;
     location: Attribute.String;
     company: Attribute.String;
+    jobDescription: Attribute.Blocks;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

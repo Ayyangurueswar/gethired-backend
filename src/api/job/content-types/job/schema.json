@@ -33,9 +33,6 @@
     "domain": {
       "type": "string"
     },
-    "description": {
-      "type": "blocks"
-    },
     "applications": {
       "type": "relation",
       "relation": "oneToMany",
@@ -54,6 +51,9 @@
     },
     "company": {
       "type": "string"
+    },
+    "jobDescription": {
+      "type": "blocks"
     }
   }
 }
