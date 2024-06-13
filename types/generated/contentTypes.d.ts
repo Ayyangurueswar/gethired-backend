@@ -829,6 +829,9 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
     contact: Attribute.String;
     location: Attribute.String;
     experience: Attribute.String;
+    profilePicture: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    about: Attribute.Blocks;
+    url: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<

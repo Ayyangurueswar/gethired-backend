@@ -91,6 +91,22 @@
     },
     "experience": {
       "type": "string"
+    },
+    "profilePicture": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "about": {
+      "type": "blocks"
+    },
+    "url": {
+      "type": "string"
     }
   }
 }

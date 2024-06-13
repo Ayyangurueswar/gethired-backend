@@ -6,7 +6,7 @@ module.exports = {
             handler: 'application.me'
         },
         {
-            method: 'GET',
+            method: 'POST',
             path: '/applications/getApplications',
             handler: 'application.getApplications'
         }
