@@ -52,8 +52,8 @@
     "company": {
       "type": "string"
     },
-    "jobDescription": {
-      "type": "blocks"
+    "jobDesc": {
+      "type": "text"
     }
   }
 }

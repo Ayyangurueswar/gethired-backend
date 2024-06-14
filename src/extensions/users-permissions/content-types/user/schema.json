@@ -93,20 +93,21 @@
       "type": "string"
     },
     "profilePicture": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
-    },
-    "about": {
-      "type": "blocks"
+      ]
     },
     "url": {
       "type": "string"
+    },
+    "about": {
+      "type": "text"
     }
   }
 }

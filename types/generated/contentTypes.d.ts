@@ -442,7 +442,7 @@ export interface ApiJobJob extends Schema.CollectionType {
     mode: Attribute.Enumeration<['Remote', 'In-office']>;
     location: Attribute.String;
     company: Attribute.String;
-    jobDescription: Attribute.Blocks;
+    jobDesc: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -830,8 +830,8 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
     location: Attribute.String;
     experience: Attribute.String;
     profilePicture: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    about: Attribute.Blocks;
     url: Attribute.String;
+    about: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
