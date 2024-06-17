@@ -32,6 +32,25 @@ module.exports = createCoreController('api::application.application', ({strapi})
             return ctx.badRequest([{messages: [{id: 'No authorization header was found'}]}])
         }
         const res = await super.create(ctx);
+        const applicationExists = await strapi.db.query("api::application.application").findOne({
+            where: {
+                $and: [
+                    {
+                        user: {
+                            id: user.id,
+                        }
+                    },
+                    {
+                        job: {
+                            id: res.data.attributes.applicationFor,
+                        }
+                    }
+                ],
+            }
+        });
+        if(applicationExists){
+            return ctx.badRequest([{messages: [{id: 'Application already exists'}]}])
+        }
         const updatedRes = await strapi.entityService.update('api::application.application', res.data.id, {
             data: {
                 user: {
