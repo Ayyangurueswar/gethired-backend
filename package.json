@@ -14,8 +14,10 @@
     "@strapi/plugin-i18n": "4.24.4",
     "@strapi/plugin-users-permissions": "4.24.4",
     "@strapi/provider-upload-cloudinary": "^4.24.5",
-    "@strapi/strapi": "4.24.4",
+    "@strapi/strapi": "^4.5.6",
     "better-sqlite3": "8.6.0",
+    "pg": "^8.12.0",
+    "pg-connection-string": "^2.6.4",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "5.3.4",
@@ -28,7 +30,7 @@
     "uuid": "3a021805-013c-4fd9-9e99-179bbde95d63"
   },
   "engines": {
-    "node": ">=18.0.0 <=20.x.x",
+    "node": "20.14.0",
     "npm": ">=6.0.0"
   },
   "license": "MIT"
